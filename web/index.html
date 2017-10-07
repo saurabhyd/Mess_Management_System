@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <title>Mess Management System</title>
+    <link rel=stylesheet href='style.css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class='topheader'><b>Mess Management System</b></div>
+    
+    <div class="container-fluid">
+        <div class="col-sm-4">
+            <div class='box'>
+                <div class='subhead'><b>Mess Registration</b></div>
+                <img src='register.png'>
+                <button type="button" class="btn btn-primary" data-toggle='modal' data-target='#popup'>Login</button>
+                
+                <div class='modal fade' id='popup'>
+                    <div class='modal-dialog'>
+                        <div class='modal-content'>
+                           
+                            <div class='modal-header'>
+                                <button type='button' class='close' data-dismiss='modal'>&times;</button>
+                                <h2 class='modal-title'>Log In</h2>
+                            </div>
+                            
+                            
+                            <div class='modal-body'>
+                                <form role='form'>
+                                    <div class='form-group'>
+                                        <input type='text' class='form-control' placeholder='Registration no.'>
+                                    </div>
+                                    <div class='form-group'>
+                                        <input type='password' class='form-control' placeholder='Password'>
+                                    </div>
+                                </form>
+                            </div>
+                            
+                            
+                            <div class='modal-footer'>
+                                <button class='btn btn-primary'>Click Here To Log In</button>
+                            </div>
+                        </div>
+                    </div>                    
+                </div>
+                
+            </div>
+        </div>
+        
+        <div class="col-sm-4">
+            <div class='box'>
+                <div class='subhead'><b>Mess Menu</b></div>
+                <img src='food3.png'>
+                <button type="button" class="btn btn-primary">See details</button>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class='box'>
+                <div class='subhead'><b>Pre-book your meal</b></div>
+                <img src='book.png'>
+                <a href='guest.html'><button type="button" class="btn btn-primary">Book Meal</button></a>
+            </div>
+        </div>
+    </div>
+    
+    <div class='pagebottom'>
+    DBMS PROJECT © V SEM 2017<br>
+    <br>Saurabh Yadav 15CO145
+    <br>Kiran S 15CO125
+    </div>
+
+</body>
+    
+</html>
