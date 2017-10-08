@@ -13,12 +13,12 @@
         <div class='topheader'><b>Mess Management System</b></div>
         <div class='book'>Book Your Meal</div>
         <div class='detail'>
-            
-            <input type='text' class='form-control' placeholder='First Name'>
-            <input type='text' class='form-control' placeholder='Last Name'>
-            
-            <div class='choosemess'>Mess Block : </div>
             <form class='mess'>
+                <input type='text' class='form-control' placeholder='First Name'>
+                <input type='text' class='form-control' placeholder='Last Name'>
+
+                <div class='choosemess'>Mess Block : </div>
+
                 <select class='messblock' name='blocks'>
                     <option value='0'>---Select Mess Block---</option>
                     <option value='1'>Mess Block 1</option>
@@ -27,10 +27,8 @@
                     <option value='4'>Mess Block 4</option>
                     <option value='5'>Mess Block 5</option>
                 </select>
-            </form>
-            
-            <div class='choosemeal'>Meal Type : </div>
-            <form class='meal'>
+
+                <div class='choosemeal'>Meal Type : </div>
                 <select class='mealtype' name='selectmeal'>
                     <option value='0'>---Select Meal Type---</option>
                     <option value='1'>Breakfast</option>
@@ -39,9 +37,9 @@
                 </select>
                 <div class='dat'>Date : </div>
                 <input type="date" class="mydate" >
+                
+                <button type='submit' class='btn btn-primary' id='butn'>Submit</button>
             </form>
-            
-            <button class='btn btn-primary' id='butn'>Submit</button>
             
         </div>
         
