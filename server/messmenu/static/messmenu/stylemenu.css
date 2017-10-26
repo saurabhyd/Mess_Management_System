@@ -1,0 +1,45 @@
+body
+{
+    margin:0;
+    overflow: auto;
+    background-image: url('bg4.jpg');
+}
+.topheader
+{
+    color:#bfbfbf;
+    background-color:#262626;
+    width:100%;
+    padding:10px;
+    font-size:350%;
+    font-family:bookman;
+    padding-left:10%;
+    padding-bottom:2%;
+}
+.topheader:hover
+{
+    color:white;
+}
+.menu
+{
+    color:white;
+    text-align: center;
+    margin-top:3%;
+    font-family: fantasy;
+    font-size: 400%;
+}
+.details
+{
+    text-align: center;
+}
+.messform
+{
+    width:20%;
+    padding:10px 4px 10px 5px;
+    border-radius: 6px;
+    margin-right: 0.5%;
+}
+#butn
+{
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
