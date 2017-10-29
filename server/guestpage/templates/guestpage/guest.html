@@ -14,7 +14,10 @@
         <div class='topheader'><b>Mess Management System</b></div>
         <div class='book'>Book Your Meal</div>
         <div class='detail'>
-            <form class='mess'>
+            <form class='mess' method="post">
+                {% csrf_token %}
+                {{ form }}
+                <!--
                 <input type='text' class='form-control' placeholder='First Name'>
                 <input type='text' class='form-control' placeholder='Last Name'>
 
@@ -38,6 +41,7 @@
                 </select>
                 <div class='dat'>Date : </div>
                 <input type="date" class="mydate" >
+                -->
                 
                 <button type='submit' class='btn btn-primary' id='butn'>Submit</button>
             </form>

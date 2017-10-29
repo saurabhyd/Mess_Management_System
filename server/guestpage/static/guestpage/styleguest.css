@@ -51,9 +51,8 @@ body
 .messblock
 {
     float:left;
-    width:71%;
+    width:97%;
     margin-top:5%;
-    margin-left: 4.5%;
     padding:10px 4px 10px 5px;
     border-radius: 6px;
 }
@@ -68,9 +67,8 @@ body
 .mealtype
 {
     float:left;
-    width:71%;
+    width:97%;
     margin-top:5%;
-    margin-left: 6.4%;
     padding:10px 4px 10px 5px;
     border-radius: 6px;
 }
