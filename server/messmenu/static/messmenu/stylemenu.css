@@ -43,3 +43,21 @@ body
     padding-top: 8px;
     padding-bottom: 8px;
 }
+
+.table
+{
+    color: white;
+    text-align: center;
+}
+.table thead tr th
+{
+    color:black;
+    background-color:white;
+    text-align:center;
+}
+.edit
+{
+    margin: 2% auto 0 auto;
+    text-align: center;
+    width: 60%;
+}

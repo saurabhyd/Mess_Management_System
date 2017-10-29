@@ -17,55 +17,51 @@
         <form class='details' method="post">
             {% csrf_token %}
             {{ form }}
-            <!--
-            <select class='messform' name='blocks'>
-                <option value='0'>---Select Mess Block---</option>
-                <option value='1'>Mess Block 1</option>
-                <option value='2'>Mess Block 2</option>
-                <option value='3'>Mess Block 3</option>
-                <option value='4'>Mess Block 4</option>
-                <option value='5'>Mess Block 5</option>
-            </select>
-            
-            <select class='messform' name='weekday'>
-                <option value='0'>---Select Weekday---</option>
-                <option value='1'>Monday</option>
-                <option value='2'>Tuesday</option>
-                <option value='3'>Wednesday</option>
-                <option value='4'>Thursday</option>
-                <option value='5'>Friday</option>
-                <option value='6'>Saturday</option>
-                <option value='7'>Sunday</option>
-            </select>
-            -->
-            <!--
-            <select class='messform' name='selectmeal'>
-                <option value='0'>---Select Meal Type---</option>
-                <option value='1'>Breakfast</option>
-                <option value='2'>Lunch</option>
-                <option value='3'>Dinner</option>
-            </select>
-            -->
             <button type='submit' class='btn btn-primary' id='butn'>Submit</button>
         </form>
-
-
-            <table class="table">
-                <thead class="thead-inverse">
-                    <tr>
-                        <th>Meal Type</th>
-                        <th>Meal</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for food in foods %}
+        {% if foods.count is 3 %}
+            <div class="edit">
+                <table class="table table-bordered">
+                    <thead class="thead-inverse">
                         <tr>
-                            <td>{{ food.type }}</td>
-                            <td>{{ food.food }}</td>
+                            <th>Meal Type</th>
+                            <th>Meal</th>
                         </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                        {% for food in foods %}
+                            <tr>
+                                <td>{{ food.type }}</td>
+                                <td>{{ food.food }}</td>
+                            </tr>
+                        {% endfor %}
 
+                    </tbody>
+                </table>
+            </div>
+        {% elif foods.count > 3 %}
+            <div class="edit">
+                <table class="table table-bordered">
+                    <thead class="thead-inverse">
+                        <tr>
+                            <th>Weekday</th>
+                            <th>Meal Type</th>
+                            <th>Meal</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for food in foods %}
+                            <tr>
+                                {% if food.s2 is 1 %}
+                                <td rowspan="3">{{ food.weekday }}</td>
+                                {% endif %}
+                                <td>{{ food.type }}</td>
+                                <td>{{ food.food }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        {% endif %}
     </body>
 </html>
