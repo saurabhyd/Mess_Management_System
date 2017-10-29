@@ -4,5 +4,5 @@ from . import views
 app_name= 'messmenu'
 
 urlpatterns = [
-    url(r'^$', views.menu, name='menu'),
+    url(r'^$', views.messmenu, name='messmenu'),
 ]

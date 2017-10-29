@@ -8,7 +8,8 @@ class mess(models.Model):
     vacancy = models.PositiveIntegerField()
 
     def __str__(self):
-        return str(self.messbno) + "-" + self.type
+        return str(self.messbno)
+               #+ "-" + self.type
 
 class menu(models.Model):
     messbno = models.ForeignKey(mess)

@@ -14,7 +14,10 @@
         <div class='topheader'><b>Mess Management System</b></div>
         <div class='menu'>Mess Menu</div>
         
-        <form class='details'>
+        <form class='details' method="post">
+            {% csrf_token %}
+            {{ form }}
+            <!--
             <select class='messform' name='blocks'>
                 <option value='0'>---Select Mess Block---</option>
                 <option value='1'>Mess Block 1</option>
@@ -34,15 +37,35 @@
                 <option value='6'>Saturday</option>
                 <option value='7'>Sunday</option>
             </select>
-            
+            -->
+            <!--
             <select class='messform' name='selectmeal'>
                 <option value='0'>---Select Meal Type---</option>
                 <option value='1'>Breakfast</option>
                 <option value='2'>Lunch</option>
                 <option value='3'>Dinner</option>
             </select>
-            
+            -->
             <button type='submit' class='btn btn-primary' id='butn'>Submit</button>
         </form>
+
+
+            <table class="table">
+                <thead class="thead-inverse">
+                    <tr>
+                        <th>Meal Type</th>
+                        <th>Meal</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for food in foods %}
+                        <tr>
+                            <td>{{ food.type }}</td>
+                            <td>{{ food.food }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
     </body>
 </html>
