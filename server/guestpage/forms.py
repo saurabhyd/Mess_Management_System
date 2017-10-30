@@ -23,7 +23,7 @@ class guestform(forms.ModelForm):
     lname = forms.CharField(label='',widget=forms.TextInput(attrs={'class':'form-control','placeholder':'Last Name'}))
     block = forms.CharField(label='',widget=forms.Select(choices=MESS_CHOICES,attrs={'class':'messblock'}))
     meal = forms.CharField(label='',widget=forms.Select(choices=TYPE,attrs={'class':'mealtype'}))
-    date = forms.DateField()
+    date = forms.DateField(label='',widget=forms.DateInput(attrs={'class':'dt','placeholder':'Date : YYYY-MM-DD'}))
 
     class Meta:
         model=guestreg
