@@ -96,6 +96,8 @@ body
     margin-top: 5%;
     font-family: 'Times New Roman';
     font-size: 150%;
+    float:right;
     position: relative;
-    right:6%;
+    padding:2.5px;
+    right:3%;
 }

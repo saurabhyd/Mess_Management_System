@@ -8,12 +8,15 @@ def guest(request):
     if request.method == 'POST':
         form = guestform(request.POST)
         if form.is_valid():
-            # if form.block!=0 and form.meal!='zero':
+            #if form.meal!='zero':
             form.save()
+            """else:
+                return render(request, 'guestpage/guest.html',
+                              {'form': form, 'message': 'Please input valid details'})"""
             # return HttpResponse('<div class="alert alert-success"><strong>Success!</strong> Your Meal has been Booked</div>')
             # else:
             form = guestform()
             return render(request, 'guestpage/guest.html',
-                          {'form': form, 'success_message': 'Your Meal has been Booked'})
+                          {'form': form, 'message': ' Your Meal has been Booked'})
     form = guestform()
     return render(request, 'guestpage/guest.html', {'form': form})
