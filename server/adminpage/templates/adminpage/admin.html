@@ -12,6 +12,9 @@
 
 <body>
     <div class='topheader'><b>Mess Management System</b></div>
+    {% if message %}
+    <div class="alert alert-danger fade in" ><span class="glyphicon glyphicon-remove"></span><strong>{{ message }}</strong></div>
+    {% endif %}
     <div class="container-fluid">
         <div class="col-sm-6">
             <div class='heading'>
@@ -20,11 +23,13 @@
         </div>
          
         <div class="col-sm-6">
-            <div class='sideform'>
-                <input type='text' class='form-control' placeholder='Admin ID'>
-                <input type='password' class='form-control' placeholder='Password'>
+            <form class='sideform' method="post">
+               <!-- <input type='text' class='form-control' placeholder='Admin ID'>
+                <input type='password' class='form-control' placeholder='Password'> -->
+                {% csrf_token %}
+                {{ form }}
                 <button class='btn btn-primary'>Click Here To Log In</button>
-            </div>
+            </form>
         </div>
     </div>
     <div class='pagebottom'>

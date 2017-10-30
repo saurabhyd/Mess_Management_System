@@ -23,7 +23,7 @@ body
 {
 	background-color:#262626;
 	width:100%;
-	height:15%;
+	height:8%;
 	position:fixed;
 	bottom:0;
 	color:#bfbfbf;
@@ -33,7 +33,7 @@ body
 
 .box
 {
-    margin-top:3%;
+    margin-top:5%;
     text-align: center;
     background-color: white;
     box-shadow: 5px 5px 3px grey;
