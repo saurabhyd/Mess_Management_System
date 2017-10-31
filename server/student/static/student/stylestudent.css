@@ -1,0 +1,45 @@
+body
+{
+    margin:0;
+    overflow: auto;
+    background-image: url('bg5.jpg');
+}
+.col-sm-3
+{
+    opacity:0.9;
+    box-shadow: 3px 3px 3px grey;
+}
+#sidebar
+{   
+    text-align: center;
+    background-color:white;
+    padding:1% 0 15% 1%;
+}
+#sidebar h2
+{
+    background-color:black;
+    color:white;
+    margin-left:-5%;
+    padding-top:5%;
+    padding-bottom: 5%;
+    margin-top: -0.5%;
+    box-shadow: 3px 3px 3px grey;
+}
+#sidebar ul
+{
+    list-style: none;
+    padding-left:0;
+}
+#sidebar ul li
+{
+    
+    font-size: 140%;
+    margin:2% 0 2% 0;
+}
+.pagebody
+{
+    padding-bottom:49%;
+    //background-color: white;
+    box-shadow: 3px 3px 3px grey;
+    opacity:0.9;
+}
