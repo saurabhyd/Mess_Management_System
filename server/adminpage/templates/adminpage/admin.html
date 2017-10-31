@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <div class='topheader'><b>Mess Management System</b></div>
+<div class='topheader'><a href="{% url 'mainpage:index' %}"><b>Mess Management System</b></a></div>
     {% if message %}
     <div class="alert alert-danger fade in" ><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><span class="glyphicon glyphicon-remove"></span><strong>{{ message }}</strong></div>
     {% endif %}

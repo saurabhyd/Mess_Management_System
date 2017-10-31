@@ -18,6 +18,16 @@ body
 .topheader:hover
 {
     color:white;
+    text-decoration: none;
+}
+.topheader a
+{
+    color:#bfbfbf;
+}
+.topheader a:hover
+{
+    text-decoration: none;
+    color:white;
 }
 .pagebottom
 {

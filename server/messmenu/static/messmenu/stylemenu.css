@@ -19,6 +19,15 @@ body
 {
     color:white;
 }
+.topheader a
+{
+    color:#bfbfbf;
+}
+.topheader a:hover
+{
+    text-decoration: none;
+    color:white;
+}
 .menu
 {
     color:white;

@@ -13,7 +13,7 @@
     <body>
 
 
-        <div class='topheader'><b>Mess Management System</b></div>
+    <div class='topheader'><a href="{% url 'mainpage:index' %}"><b>Mess Management System</b></a></div>
         {% if message %}
         <div class="alert alert-success fade in" ><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><span class="glyphicon glyphicon-ok"></span><strong>{{ message }}</strong></div>
         {% endif %}
@@ -23,32 +23,6 @@
             <form class='mess' method="post">
                 {% csrf_token %}
                 {{ form }}
-                <!--
-                <input type='text' class='form-control' placeholder='First Name'>
-                <input type='text' class='form-control' placeholder='Last Name'>
-
-                <div class='choosemess'>Mess Block : </div>
-
-                <select class='messblock' name='blocks'>
-                    <option value='0'>---Select Mess Block---</option>
-                    <option value='1'>Mess Block 1</option>
-                    <option value='2'>Mess Block 2</option>
-                    <option value='3'>Mess Block 3</option>
-                    <option value='4'>Mess Block 4</option>
-                    <option value='5'>Mess Block 5</option>
-                </select>
-
-                <div class='choosemeal'>Meal Type : </div>
-                <select class='mealtype' name='selectmeal'>
-                    <option value='0'>---Select Meal Type---</option>
-                    <option value='1'>Breakfast</option>
-                    <option value='2'>Lunch</option>
-                    <option value='3'>Dinner</option>
-                </select>
-                <div class='dat'>Date : </div>
-                <input type="date" class="mydate" >
-                -->
-                
                 <button type='submit' class='btn btn-primary' id='butn'>Submit</button>
             </form>
             
