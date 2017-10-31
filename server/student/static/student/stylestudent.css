@@ -38,8 +38,42 @@ body
 }
 .pagebody
 {
-    padding-bottom:49%;
-    //background-color: white;
+    padding-bottom:50%;
+    background-color: white;
     box-shadow: 3px 3px 3px grey;
     opacity:0.9;
+}
+.edit
+{
+    position:absolute;
+    bottom:-550%;
+    width:70%;
+
+
+}
+.headin
+{
+    position:absolute;
+    color:white;
+}
+.fm
+{
+}
+#tbl
+{
+    text-align: center;
+}
+#tbl th
+{
+    background-color:white;
+    color:black;
+    text-align: center;
+
+}
+#bt
+{
+    position:absolute;
+    bottom:-8%;
+    right:0%;
+
 }

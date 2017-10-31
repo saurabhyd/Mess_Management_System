@@ -5,18 +5,26 @@ class student_details(models.Model):
     usn = models.CharField(primary_key=True, max_length=15)
     pwd = models.CharField(max_length=15)
     messrno = models.PositiveIntegerField()
-    name = models.CharField(max_length=50)
+    fname = models.CharField(max_length=50)
+    lname = models.CharField(max_length=50,null=True)
     bno = models.PositiveIntegerField()
     branch = models.CharField(max_length=50)
     sem = models.PositiveIntegerField()
 
     def __str__(self):
-        return self.usn + "-" + self.name
+        return self.usn + "-" + self.fname
 
 class messreg(models.Model):
-    usn = models.ForeignKey(student_details)
+    usn = models.CharField(max_length=15)
     messbno = models.PositiveIntegerField()
     validity = models.DateField()
 
     def __str__(self):
         return str(self.usn) + "-" + str(self.messbno)
+
+class feed(models.Model):
+    block=models.PositiveIntegerField()
+    fdb=models.CharField(max_length=500)
+
+    def __str__(self):
+        return str(self.block)

@@ -3,7 +3,8 @@
 
 <head>
     <title>Mess Management System</title>
-    <link rel=stylesheet href='stylestudent.css'>
+    {% load static %}
+    <link rel=stylesheet href='{% static "student/stylestudent.css" %}'>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -13,35 +14,81 @@
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a class="navbar-brand">Mess Management System</a>
+                <a class="navbar-brand" href="mainpage:index">Mess Management System</a>
             </div>
             <ul class="nav navbar-nav">
                 <li class="active"><a>Home</a></li>
-                <li><a>Feedback</a></li>
+                <li><a href="studentfeedback">Feedback</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-            <li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+            <li><a href="{% url 'mainpage:index' %}"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
             </ul>
         </div>
     </nav>
     
     <div class='container-fluid'>
+    {% for user in us %}
         <div class='col-sm-3' id='sidebar'>
-            <h2><strong>Welcome Saurabh!</strong></h2>
+            <h2><strong>Welcome {{ user.fname }}!</strong></h2>
             <br><br><br>
             <h3><b>Profile Details</b></h3>
             <ul class='details'>
-                <li>Full Name : Saurabh Yadav</li>
-                <li>Roll No : 15CO145</li>
-                <li>Semester : 5</li>
-                <li>Branch : Computer Science</li>
+                <li>Full Name : {{ user.fname }} {{ user.lname }}</li>
+                <li>Roll No : {{ user.usn }}</li>
+                <li>Semester : {{ user.sem }}</li>
+                <li>Branch : {{ user.branch }}</li>
             </ul>
         </div>
-        
+    {% endfor %}
+
         <div class='col-sm-9'>
-            <div  class='pagebody'>
-                <div class="alert alert-info fade in" ><span class="glyphicon glyphicon-ok"></span><strong> You are registered for Mess Block 1</strong></div>
-            </div>
+
+                {%  if var is 1 %}
+                    <div class="alert alert-info" ><span class="glyphicon glyphicon-pencil"></span><strong> You are registered for Mess Block {{ bno }}</strong></div>
+                {% elif var is 2 %}
+                    <div class="alert alert-danger" ><span class="glyphicon glyphicon-remove"></span><strong> You have not registered for any Mess</strong></div>
+                {% elif var is 3 %}
+                    <div class="alert alert-success" ><span class="glyphicon glyphicon-ok"></span><strong> Congratulations! You are registered for Mess Block {{ bno }}</strong></div>
+                {% elif var is 4 %}
+                    <div class="alert alert-warning" ><span class="glyphicon glyphicon-warning-sign"></span><strong> You need to register for a mess before giving feedback{{ bno }}</strong></div>
+                {% endif %}
+
+
+
+            {% if var is 2 or var is 4%}
+                <h1 class="headin"><b>Available Messes</b></h1>
+                <div class="edit" style="color:white">
+                <table class="table table-bordered" id="tbl">
+                    <thead class="thead-inverse">
+                        <tr>
+                            <th>Select</th>
+                            <th>Mess Block</th>
+                            <th>Vacancy</th>
+                        </tr>
+                    </thead>
+
+                    <form method="post" class="fm">
+                    <tbody>
+                    {% csrf_token %}
+                        {% for mess in messblocks %}
+                            {% if mess.vacancy > 0 %}
+                                <tr>
+                                    <td><input type="radio" name="msb" value="{{ mess.messbno }}"></td>
+                                    <td>Mess Block {{ mess.messbno }}</td>
+                                    <td>{{ mess.vacancy }}</td>
+                                </tr>
+                            {% endif %}
+                            <br>
+                        {% endfor %}
+                    </tbody>
+
+                        <button type="submit" class="btn btn-primary" id="bt">Register</button>
+                    </form>
+                </table>
+                </div>
+            {% endif %}
+
+
         </div>
     </div>
 </body>

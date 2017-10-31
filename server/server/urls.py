@@ -24,5 +24,5 @@ urlpatterns = [
     url(r'^guestpage/',include('guestpage.urls')),
     url(r'^messmenu/',include('messmenu.urls')),
     url(r'^adminpage/',include('adminpage.urls')),
-    url(r'^student/',include('student.urls')),
+    #url(r'^student/',include('student.urls')),
 ]

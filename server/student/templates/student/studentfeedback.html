@@ -3,7 +3,8 @@
 
 <head>
     <title>Mess Management System</title>
-    <link rel=stylesheet href='stylestudent.css'>
+    {% load static %}
+    <link rel=stylesheet href={% static 'student/stylestudent.css' %}>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -13,23 +14,27 @@
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a class="navbar-brand">Mess Management System</a>
+                <a class="navbar-brand" href="mainpage:index">Mess Management System</a>
             </div>
             <ul class="nav navbar-nav">
                 <li><a>Home</a></li>
                 <li class='active'><a>Feedback</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-            <li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+            <li><a href="mainpage:index"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
             </ul>
         </div>
     </nav>
     
     <div class='container'>
+        {% if var is 1 %}
+            <div class="alert alert-success" ><span class="glyphicon glyphicon-ok"></span><strong> Thanks for your feedback! {{ bno }}</strong></div>
+        {% endif %}
         <h2><b style="color:white">Submit your feedback...</b></h2>
         <br>
         <form method='post'>
-            <textarea placeholder='Enter text here...' rows=10 cols=160></textarea>
+            {% csrf_token %}
+            <textarea placeholder='Enter text here...' rows=10 cols=160 name="feedtext"></textarea>
             <button type="submit" class="btn btn-primary" style='float:right; padding:1%'>Submit</button>
         </form>
     </div>
