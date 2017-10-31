@@ -64,7 +64,7 @@ body
     font-size: 230%;
     font-family: Times New Roman;
 }
-.close
+#btn
 {
     position:relative;
     left:25%;

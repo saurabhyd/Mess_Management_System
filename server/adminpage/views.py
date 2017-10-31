@@ -13,6 +13,6 @@ def admin(request):
             if user:
                 return render(request, 'adminpage/admin.html', {'form': form})
             else:
-                return render(request, 'adminpage/admin.html', {'form': form, 'message':'Invalid Login Credentials'})
+                return render(request, 'adminpage/admin.html', {'form': form, 'message':' Invalid Login Credentials'})
     form = adminlogin()
     return render(request,'adminpage/admin.html', {'form':form})

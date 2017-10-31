@@ -14,6 +14,6 @@ def index(request):
             if user:
                 return render(request, 'mainpage/index.html', {'form': form})
             else:
-                return render(request, 'mainpage/index.html', {'form': form, 'message': 'Invalid login credentials'})
+                return render(request, 'mainpage/index.html', {'form': form, 'message': ' Invalid login credentials'})
     form = studentlogin()
     return render(request, 'mainpage/index.html', {'form':form})
