@@ -14,8 +14,10 @@
 
 
     <div class='topheader'><a href="{% url 'mainpage:index' %}"><b>Mess Management System</b></a></div>
-        {% if message %}
-        <div class="alert alert-success fade in" ><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><span class="glyphicon glyphicon-ok"></span><strong>{{ message }}</strong></div>
+        {% if var is 1 %}
+        <div class="alert alert-success fade in" ><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><span class="glyphicon glyphicon-ok"></span><strong> Your meal has been booked!</strong></div>
+        {% elif var is 2 %}
+        <div class="alert alert-danger fade in" ><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><span class="glyphicon glyphicon-remove"></span><strong> Please input valid details!</strong></div>
         {% endif %}
 
         <div class='book'>Book Your Meal</div>

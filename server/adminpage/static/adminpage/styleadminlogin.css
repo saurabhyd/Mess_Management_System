@@ -1,0 +1,67 @@
+body
+{
+    margin:0;
+    overflow: auto;
+    background-image: url('bg7.jpeg');
+}
+.col-sm-3
+{
+    opacity:0.9;
+    box-shadow: 3px 3px 3px grey;
+}
+#sidebar
+{
+    text-align: center;
+    background-color:white;
+    padding:1% 0 15% 1%;
+}
+#sidebar h2
+{
+    background-color:black;
+    color:white;
+    margin-left:-5%;
+    padding-top:5%;
+    padding-bottom: 5%;
+    margin-top: -0.5%;
+    box-shadow: 3px 3px 3px grey;
+}
+#sidebar ul
+{
+    list-style: none;
+    padding-left:0;
+}
+#sidebar ul li
+{
+
+    font-size: 140%;
+    margin:2% 0 2% 0;
+}
+.tex
+{
+    color:white;
+}
+.messform
+{
+    border-radius:6px;
+    padding:1%;
+    width:40%;
+    margin-right:1%;
+}
+#click
+{
+    padding:0.9%;
+}
+.field1
+{
+    border-radius:6px;
+    padding:1%;
+    width:40%;
+    margin-right:1%;
+}
+.field2
+{
+  border-radius:6px;
+    padding:1%;
+    width:40%;
+    padding-bottom: 3%;
+}

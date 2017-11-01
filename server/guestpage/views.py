@@ -1,22 +1,23 @@
 from django.shortcuts import render, HttpResponse
 from .forms import guestform
-from .models import guestreg
+from django.utils.datetime_safe import date
 
 
-# Create your views here.
 def guest(request):
     if request.method == 'POST':
         form = guestform(request.POST)
         if form.is_valid():
-            #if form.meal!='zero':
-            form.save()
-            """else:
+            ml = form.cleaned_data['meal']
+            dt = form.cleaned_data['date']
+            if ml !='zero' and dt >= date.today():
+                form.save()
+                form = guestform()
                 return render(request, 'guestpage/guest.html',
-                              {'form': form, 'message': 'Please input valid details'})"""
-            # return HttpResponse('<div class="alert alert-success"><strong>Success!</strong> Your Meal has been Booked</div>')
-            # else:
-            form = guestform()
-            return render(request, 'guestpage/guest.html',
-                          {'form': form, 'message': ' Your Meal has been Booked'})
+                              {'form': form, 'var': 1})
+
+            else:
+                return render(request, 'guestpage/guest.html',
+                              {'form': form, 'var' : 2})
+
     form = guestform()
     return render(request, 'guestpage/guest.html', {'form': form})

@@ -1,5 +1,5 @@
 from django.db import models
-
+from messmenu.models import mess
 # Create your models here.
 class student_details(models.Model):
     usn = models.CharField(primary_key=True, max_length=15)
@@ -14,9 +14,9 @@ class student_details(models.Model):
     def __str__(self):
         return self.usn + "-" + self.fname
 
-class messreg(models.Model):
+class messrg(models.Model):
     usn = models.CharField(max_length=15)
-    messbno = models.PositiveIntegerField()
+    messbno = models.ForeignKey(mess)
     validity = models.DateField()
 
     def __str__(self):
@@ -28,3 +28,52 @@ class feed(models.Model):
 
     def __str__(self):
         return str(self.block)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+class messreg(models.Model):
+    usn = models.CharField(max_length=15)
+    messbno = models.PositiveIntegerField()
+    validity = models.DateField()
+
+    def __str__(self):
+        return str(self.usn) + "-" + str(self.messbno)

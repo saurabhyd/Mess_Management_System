@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <title>Mess Management System</title>
+    {% load static %}
+    <link rel=stylesheet href='{% static "adminpage/styleadminlogin.css" %}'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="{% url 'mainpage:index' %}">Mess Management System</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a>Home</a></li>
+                <!--<li><a href="#">Feedback</a></li>-->
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+            <li><a href="{% url 'adminpage:admin' %}"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class='container-fluid'>
+
+        <div class='col-sm-3' id='sidebar'>
+            <h2><strong>Welcome {{ us.fname }}!</strong></h2>
+            <br><br><br>
+            <h3><b>Profile Details</b></h3>
+            <ul class='details'>
+                <li>Full Name : {{ us.fname }} {{ us.lname }}</li>
+                <li>Mess Block : {{ us.messbno }}</li>
+                <li>Email : {{ us.email }}</li>
+                <li>Phone : {{ us.phone }}</li>
+            </ul>
+        </div>
+        <div class="col-sm-1"></div>
+
+        <div class="col-sm-8">
+            {% if message %}
+                <div class="alert alert-success fade in" ><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><span class="glyphicon glyphicon-ok"></span><strong> {{ message }}</strong></div>
+            {% endif %}
+            <h1><b><div class="tex">Edit Mess Menu</div></b></h1><br>
+            <form method="post">
+                {% csrf_token %}
+                {{ f.as_p }}
+                <button type='submit' class="btn btn-primary" id="click">Submit</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
